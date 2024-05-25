@@ -6,10 +6,20 @@ function getRandomInt(min, max) {
 
 const randomNumber = getRandomInt(1, 100);
 const feedback = document.getElementById('feedback');
+let attempt = 0;
+const maxAttempt = 3;
 
 document.getElementById('button').addEventListener('click', function(){
+if(attempt < maxAttempt){
     const inputElement = document.getElementById('number'); //gets the input element ID
     const inputValue = parseInt( inputElement.value, 10);
+
+    if(isNaN(inputValue)){
+        feedback.innerText = 'please input a valid number';
+        return;
+    }
+    attempt++;
+
     if (inputValue === randomNumber){
         feedback.innerHTML = 'congrats you won';
     } else if (inputValue < randomNumber){
@@ -17,4 +27,10 @@ document.getElementById('button').addEventListener('click', function(){
     }else if (inputValue > randomNumber){
         feedback.innerText = 'too high try again';
     }
+
+    if (attempt >= maxAttempt){
+        feedback.innerHTML = 'Game Over!  the correct number was ' + randomNumber;
+    }
+}
+
 });
