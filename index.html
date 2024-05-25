@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
     <h1>Guessing Game</h1>
     <section>
         <p>input a number between 1 and 100</p>
        <label for="number">Your guess:
-        <input type="number" placeholder="input number" name="number">
+        <input type="number" placeholder="input number" name="number" id="number">
        </label>
-        <p></p>
-        <button>Guess</button>
+        <p id="feedback"></p>
+        <button id="button">Guess</button>
     </section>
 </body>
 </html>

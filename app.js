@@ -5,6 +5,16 @@ function getRandomInt(min, max) {
   }
 
 const randomNumber = getRandomInt(1, 100);
+const feedback = document.getElementById('feedback');
 
-
-console.log(randomNumber);
+document.getElementById('button').addEventListener('click', function(){
+    const inputElement = document.getElementById('number'); //gets the input element ID
+    const inputValue = parseInt( inputElement.value, 10);
+    if (inputValue === randomNumber){
+        feedback.innerHTML = 'congrats you won';
+    } else if (inputValue < randomNumber){
+        feedback.innerText = ' too low try again';
+    }else if (inputValue > randomNumber){
+        feedback.innerText = 'too high try again';
+    }
+});

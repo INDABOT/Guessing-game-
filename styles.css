@@ -23,12 +23,17 @@ section {
   background-color: rgb(196, 223, 19);
   margin: 2.5rem auto;
   border-radius: 2rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 input{
     margin: 2.5rem;
     height: 2rem;
     padding-left: 0.5rem;
     margin-left: 1rem;
+    background-color:rgb(196, 223, 19) ;
+}
+p{
+    margin: 1rem;
 }
 button{
     width: 20%;
