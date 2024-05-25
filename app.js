@@ -6,8 +6,10 @@ function getRandomInt(min, max) {
 
 const randomNumber = getRandomInt(1, 100);
 const feedback = document.getElementById('feedback');
+const lives = document.getElementById('Lives');
 let attempt = 0;
 const maxAttempt = 3;
+
 
 document.getElementById('button').addEventListener('click', function(){
 if(attempt < maxAttempt){
@@ -20,6 +22,9 @@ if(attempt < maxAttempt){
     }
     attempt++;
 
+const remainingLives = maxAttempt - attempt;
+lives.innerText = 'Remaining Lives: ' + remainingLives; 
+
     if (inputValue === randomNumber){
         feedback.innerHTML = 'congrats you won';
     } else if (inputValue < randomNumber){
@@ -30,7 +35,11 @@ if(attempt < maxAttempt){
 
     if (attempt >= maxAttempt){
         feedback.innerHTML = 'Game Over!  the correct number was ' + randomNumber;
-    }
-}
+    };
+};
 
 });
+
+//todo:
+// number of lives remaining
+//
