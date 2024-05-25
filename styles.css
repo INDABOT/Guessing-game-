@@ -42,3 +42,17 @@ button{
     margin-bottom: 2.5rem;
     background-color: greenyellow;
 }
+
+@media screen and (max-width: 600px) {
+    h1{
+        font-size: 1.8rem;
+        margin-left: 20%;
+    }
+    section{
+        width: 90%;
+    }
+
+    button{
+        width: 40%;
+    }
+}
