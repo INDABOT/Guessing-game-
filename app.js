@@ -4,7 +4,7 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-const randomNumber = getRandomInt(1, 100);
+let randomNumber = getRandomInt(1, 100);
 const feedback = document.getElementById('feedback');
 const lives = document.getElementById('Lives');
 let attempt = 0;
@@ -39,6 +39,15 @@ lives.innerText = 'Remaining Lives: ' + remainingLives;
 };
 
 });
+
+document.getElementById('restart').addEventListener('click', function(){
+    randomNumber = getRandomInt(1,100);
+    attempt = 0;
+    lives.innerText ="Remaining Lives: " + maxAttempt;
+    document.getElementById('number').value = "";
+    feedback.innerText = "";
+});
+
 
 //todo:
 // number of lives remaining
