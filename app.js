@@ -1,54 +1,55 @@
-function getRandomInt(min, max) {
-    min = Math.ceil(min);
-    max = Math.floor(max);
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+const form = document.getElementById('form');
+const button = document.getElementById('button');
+const firstName = document.querySelector('.firstName');
+const lastName = document.querySelector('.lastName');
+const email = document.querySelector('.email');
+const password = document.querySelector('.password');
+
+console.log(firstName);
+
+// console.log(firstName, lastName, email, password);
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const fName = firstName.value;
+  const lName = lastName.value;
+  const emailVal = email.value;
+  const passwordVal = password.value;
+  console.log(fName, lName, emailVal, passwordVal);
+
+  // Check first name
+  if (fName === '') {
+    firstName.classList.add('error');
+  } else {
+    firstName.classList.remove('error');
+  }
+  // Check last name
+
+  if (lName === '') {
+    lastName.classList.add('error');
+  } else {
+    lastName.classList.remove('error');
+  }
+  // Check email
+
+  if (!validateEmail(emailVal) || emailVal === '') {
+    email.classList.add('error');
+  } else {
+    email.classList.remove('error');
   }
 
-let randomNumber = getRandomInt(1, 100);
-const feedback = document.getElementById('feedback');
-const lives = document.getElementById('Lives');
-let attempt = 0;
-const maxAttempt = 3;
+  // Check password
 
-
-document.getElementById('button').addEventListener('click', function(){
-if(attempt < maxAttempt){
-    const inputElement = document.getElementById('number'); //gets the input element ID
-    const inputValue = parseInt( inputElement.value, 10);
-
-    if(isNaN(inputValue)){
-        feedback.innerText = 'please input a valid number';
-        return;
-    }
-    attempt++;
-
-const remainingLives = maxAttempt - attempt;
-lives.innerText = 'Remaining Lives: ' + remainingLives; 
-
-    if (inputValue === randomNumber){
-        feedback.innerHTML = 'congrats you won';
-    } else if (inputValue < randomNumber){
-        feedback.innerText = ' too low try again';
-    }else if (inputValue > randomNumber){
-        feedback.innerText = 'too high try again';
-    }
-
-    if (attempt >= maxAttempt){
-        feedback.innerHTML = 'Game Over!  the correct number was ' + randomNumber;
-    };
-};
-
+  if (passwordVal === '') {
+    password.classList.add('error');
+  } else {
+    password.classList.remove('error');
+  }
 });
 
-document.getElementById('restart').addEventListener('click', function(){
-    randomNumber = getRandomInt(1,100);
-    attempt = 0;
-    lives.innerText ="Remaining Lives: " + maxAttempt;
-    document.getElementById('number').value = "";
-    feedback.innerText = "";
-});
-
-
-//todo:
-// number of lives remaining
-//
+//Validate email
+function validateEmail(email) {
+  var re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
