@@ -30,11 +30,13 @@ input {
   height: 2rem;
   padding-left: 0.5rem;
   margin-left: 1rem;
-  background-color: rgb(196, 223, 19);
+  background-color: rgb(238, 253, 140);
   border: none;
+  border-radius: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
 }
 input:active{
-  border: 1px solid rgb(196, 223, 19);
+  border: 1px solid rgb(224, 240, 116);
 }
 p {
   margin: 1rem;
@@ -65,15 +67,22 @@ button:active{
   p{
     font-size: 0.9rem;
   }
+  
   section {
     width: 90%;
     padding: 1.5rem;
+    text-align: center;
     align-items: center;
     justify-content: center;
     display: flex;
   }
+  .input-section{
+    width: 100%;
+  }
   input{
     margin: 0;
+    width: 70%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
   }
 
   button {
