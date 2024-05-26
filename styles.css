@@ -68,6 +68,9 @@ button:active{
   section {
     width: 90%;
     padding: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    display: flex;
   }
   input{
     margin: 0;
