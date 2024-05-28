@@ -6,6 +6,7 @@ const email = document.querySelector('.email');
 const password = document.querySelector('.password');
 const err = document.querySelectorAll('.err');
 const errorImg = document.querySelectorAll('.error-img');
+const reveal = document.getElementById('eye');
 
 console.log(firstName);
 console.log(errorImg);
@@ -29,39 +30,42 @@ form.addEventListener('submit', (e) => {
   } else {
     firstName.classList.remove('error');
     errorImg[0].classList.add('hide');
+    err[0].classList.add('hide');
   }
   // Check last name
 
   if (lName === '') {
     lastName.classList.add('error');
-    err.innerText = "Last Name cannot be empty";
+    err[1].innerText = "Last Name cannot be empty";
     errorImg[1].classList.remove('hide');
   } else {
     lastName.classList.remove('error');
     errorImg[1].classList.add('hide');
+    err[1].classList.add('hide');
 
   }
   // Check email
 
   if (!validateEmail(emailVal) || emailVal === '') {
     email.classList.add('error');
-    err.innerText = "Looks like this is not an email";
+    err[2].innerText = "Looks like this is not an email";
     errorImg[2].classList.remove('hide');
   } else {
     email.classList.remove('error');
     errorImg[2].classList.add('hide');
-
+    err[2].classList.add('hide');
   }
 
   // Check password
 
   if (passwordVal === '') {
     password.classList.add('error');
-    err.innerText = "password cannot be empty";
+    err[3].innerText = "password cannot be empty";
     errorImg[3].classList.remove('hide');
   } else {
     password.classList.remove('error');
     errorImg[3].classList.add('hide');
+    err[3].classList.add('hide');
 
   }
 });
@@ -72,3 +76,12 @@ function validateEmail(email) {
     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
+
+reveal.addEventListener('click', ()=>{
+if (password.type === 'password'){
+  password.type = 'text';
+  
+}else{
+  password.type = 'password';
+}
+})

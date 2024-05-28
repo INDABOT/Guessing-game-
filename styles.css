@@ -111,13 +111,15 @@ button {
 
 
 .err {
-  color: black;
+  display: flex;
+  color: var(--red);
   font-style: italic;
-  font-size: xx-small;
-  position: absolute;
+  font-size: x-small;
+text-align: right;
   bottom: -1rem;  /*come back here*/
   right: 0;
   z-index: 99;
+  margin-left: 63%;
 }
 
 label{
@@ -147,6 +149,10 @@ small span {
 }
 .hide{
   display: none;
+}
+#eye{
+  width: 4.5%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
