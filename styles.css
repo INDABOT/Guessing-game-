@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
   --red: hsl(0, 100%, 74%);
@@ -15,8 +15,8 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: url('./images/bg-intro-desktop.png') no-repeat center;
+  font-family: "Poppins", sans-serif;
+  background: url("./images/bg-intro-desktop.png") no-repeat center;
   background-color: var(--red);
   background-size: cover;
   width: 100vw;
@@ -109,26 +109,25 @@ button {
   margin-bottom: 1rem;
 }
 
-
 .err {
   display: flex;
   color: var(--red);
   font-style: italic;
   font-size: x-small;
-text-align: right;
-  bottom: -1rem;  /*come back here*/
+  text-align: right;
+  bottom: -1rem; /*come back here*/
   right: 0;
   z-index: 99;
   margin-left: 63%;
 }
 
-label{
+label {
   position: relative;
   display: flex;
-  align-items:center;
+  align-items: center;
 }
 
-img{
+img {
   position: absolute;
   right: 1rem;
   bottom: 2.4rem;
@@ -147,22 +146,26 @@ small span {
   font-weight: 600;
   cursor: pointer;
 }
-.hide{
+.hide {
   display: none;
 }
-#eye{
+#eye {
   width: 4.5%;
   cursor: pointer;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px), (max-width: 999.99px) {
   .container {
-    max-width: 80vw;
-    margin: 0 auto;
+    max-width: 90vw;
     display: flex;
     align-items: center;
     gap: 4rem;
     flex-direction: column;
+  }
+
+  .container-form {
+    width: 100%;
+    margin-bottom: 4rem;
   }
   h1 {
     color: white;
@@ -170,19 +173,23 @@ small span {
     line-height: 1.1;
     margin-bottom: 1.5rem;
   }
-  
+
   p {
     color: white;
     font-size: 0.98rem;
     opacity: 90%;
   }
-  .container-text{
+  .container-text {
     text-align: center;
     margin-top: 15rem;
   }
-  small{
+  small {
     display: block;
-    font-size:0.7rem;
+    font-size: 0.7rem;
     text-align: center;
+  }
+  .err{
+    position: ;
+    margin-left: 7.7rem;
   }
 }

@@ -27,6 +27,7 @@ form.addEventListener('submit', (e) => {
     firstName.classList.add('error');
     errorImg[0].classList.remove('hide');
     err[0].innerText = "First Name cannot be empty";
+    firstName.placeholder = "";
   } else {
     firstName.classList.remove('error');
     errorImg[0].classList.add('hide');
@@ -38,6 +39,7 @@ form.addEventListener('submit', (e) => {
     lastName.classList.add('error');
     err[1].innerText = "Last Name cannot be empty";
     errorImg[1].classList.remove('hide');
+    lastName.placeholder ="";
   } else {
     lastName.classList.remove('error');
     errorImg[1].classList.add('hide');
@@ -50,6 +52,7 @@ form.addEventListener('submit', (e) => {
     email.classList.add('error');
     err[2].innerText = "Looks like this is not an email";
     errorImg[2].classList.remove('hide');
+    email.placeholder="";
   } else {
     email.classList.remove('error');
     errorImg[2].classList.add('hide');
@@ -62,6 +65,8 @@ form.addEventListener('submit', (e) => {
     password.classList.add('error');
     err[3].innerText = "password cannot be empty";
     errorImg[3].classList.remove('hide');
+    reveal.classList.add('hide');
+    password.placeholder="";
   } else {
     password.classList.remove('error');
     errorImg[3].classList.add('hide');
@@ -80,8 +85,10 @@ function validateEmail(email) {
 reveal.addEventListener('click', ()=>{
 if (password.type === 'password'){
   password.type = 'text';
+  reveal.src = './images/eye.svg';
   
 }else{
   password.type = 'password';
+  reveal.src = './images/eye-slash.svg';
 }
 })
