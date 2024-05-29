@@ -110,15 +110,32 @@ button {
 }
 
 .err {
-  display: flex;
+  font-size: 0.8rem;
+  font-weight: 500;
   color: var(--red);
+  position: absolute;
+  top: -1.5rem;
+  right: 0.3rem;
+  display: block;
+  padding-top: 0.3rem;
   font-style: italic;
-  font-size: x-small;
-  text-align: right;
-  bottom: -1rem; /*come back here*/
-  right: 0;
   z-index: 99;
-  margin-left: 63%;
+}
+
+.email-error {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--red);
+    position: absolute;
+    top: -9rem;
+    left: 1.5rem;
+    display: block;
+    padding-top: 0.3rem;
+    font-style: italic;
+    z-index: 99;
+}
+.ct{
+  position: relative;
 }
 
 label {
@@ -189,7 +206,7 @@ small span {
     text-align: center;
   }
   .err{
-    position: ;
+    /* position: ; check this out */
     margin-left: 7.7rem;
   }
 }

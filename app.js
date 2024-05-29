@@ -7,6 +7,7 @@ const password = document.querySelector('.password');
 const err = document.querySelectorAll('.err');
 const errorImg = document.querySelectorAll('.error-img');
 const reveal = document.getElementById('eye');
+const emailError = document.querySelector('.email-error');
 
 console.log(firstName);
 console.log(errorImg);
@@ -53,10 +54,12 @@ form.addEventListener('submit', (e) => {
     err[2].innerText = "Looks like this is not an email";
     errorImg[2].classList.remove('hide');
     email.placeholder="";
+    emailError.innerText = 'email@example/com';
   } else {
     email.classList.remove('error');
     errorImg[2].classList.add('hide');
     err[2].classList.add('hide');
+    emailError.classList.add('hide');
   }
 
   // Check password
