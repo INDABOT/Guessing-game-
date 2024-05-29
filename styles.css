@@ -209,4 +209,10 @@ small span {
     /* position: ; check this out */
     margin-left: 7.7rem;
   }
+  .email-error{
+    font-size: 0.8rem;
+  }
+  .err{
+    font-size: 0.6rem;
+  }
 }
